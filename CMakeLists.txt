@@ -1,5 +1,3 @@
-cmake_minimum_required(VERSION 3.1)
-
 project(qhotkey
     VERSION 1.5.0
     DESCRIPTION "Global hotkey library for Qt software"
