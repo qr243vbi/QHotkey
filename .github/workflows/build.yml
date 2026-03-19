@@ -37,10 +37,14 @@ jobs:
       - name: Clone repo
         uses: actions/checkout@v2.3.4
 
-      - name: Install Qt
-        uses: jurplel/install-qt-action@v3.3.0
+      - name: Install Qt        
+        uses: jurplel/install-qt-action@v4.3.0
         with:
           version: ${{ matrix.qt_version }}
+          setup-python: true
+          cache: true
+          modules: qtcharts
+          cache-key-prefix: QtCache-${{ matrix.platform }}
 
       - name: Build with CMake as static
         run: |
