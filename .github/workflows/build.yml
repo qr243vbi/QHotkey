@@ -15,11 +15,9 @@ jobs:
   build:
     strategy:
       matrix:
-        qt_version: [6.10.2]
+        qt_version: [6.10.2, 6.4.1]
         platform: [ubuntu-24.04, windows-latest]
         include:
-          - qt_version: 6.10.2
-            additional_arguments: -D QT_DEFAULT_MAJOR_VERSION=6
           - platform: ubuntu-24.04
             make: make
             CXXFLAGS: -Wall -Wextra -pedantic -Werror
