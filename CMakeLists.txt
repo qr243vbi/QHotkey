@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.10)
 project(qhotkey
     VERSION 1.5.0
     DESCRIPTION "Global hotkey library for Qt software"
-    HOMEPAGE_URL "https://skycoder42.github.io/QHotkey/"
+    HOMEPAGE_URL "https://github.com/qr243vbi/qhotkey"
     LANGUAGES CXX)
 
 option(QHOTKEY_EXAMPLES "Build examples" OFF)
@@ -19,8 +19,8 @@ endif()
 find_package(Qt${QT_DEFAULT_MAJOR_VERSION} COMPONENTS Core Gui REQUIRED)
 
 # General settings
-set(CPACK_PACKAGE_VENDOR "Skycoder42")
-set(CPACK_PACKAGE_CONTACT "Shatur")
+set(CPACK_PACKAGE_VENDOR "qr243vbi")
+set(CPACK_PACKAGE_CONTACT "qr234vbi")
 set(CPACK_RESOURCE_FILE_README "${CMAKE_SOURCE_DIR}/README.md")
 # CPACK: DEB Specific Settings
 set(CPACK_DEBIAN_PACKAGE_NAME "libqhotkey")
@@ -44,13 +44,7 @@ if(BUILD_SHARED_LIBS)
     target_compile_definitions(qhotkey PUBLIC QHOTKEY_SHARED)
 endif()
 
-if(APPLE)
-    find_library(CARBON_LIBRARY Carbon)
-    mark_as_advanced(CARBON_LIBRARY)
-
-    target_sources(qhotkey PRIVATE QHotkey/qhotkey_mac.cpp)
-    target_link_libraries(qhotkey PRIVATE ${CARBON_LIBRARY})
-elseif(WIN32)
+if(WIN32)
     target_sources(qhotkey PRIVATE QHotkey/qhotkey_win.cpp)
 else()
     find_package(X11 REQUIRED)
