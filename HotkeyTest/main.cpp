@@ -1,8 +1,6 @@
 #include "hottestwidget.h"
 #include <QApplication>
 
-//#define START_BACKGROUND
-
 int main(int argc, char *argv[])
 {
 	QApplication a(argc, argv);
