@@ -4,7 +4,7 @@ A global shortcut/hotkey for Desktop Qt-Applications.
 The QHotkey is a class that can be used to create hotkeys/global shortcuts, aka shortcuts that work everywhere, independent of the application state. This means your application can be active, inactive, minimized or not visible at all and still receive the shortcuts.
 
 ## Features
-- Works on Windows, Mac and X11
+- Works on Windows and X11
 - Easy to use, can use `QKeySequence` for easy shortcut input
 - Supports almost all common keys (Depends on OS & Keyboard-Layout)
 - Allows direct input of Key/Modifier-Combinations
